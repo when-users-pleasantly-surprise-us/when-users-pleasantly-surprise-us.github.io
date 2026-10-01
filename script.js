@@ -1,3 +1,14 @@
+// Fill each organizer's href in index.html to activate their website link.
+document.querySelectorAll('.person-link').forEach(link => {
+  if (!link.getAttribute('href').trim()) {
+    link.setAttribute('aria-disabled', 'true');
+    link.tabIndex = -1;
+  }
+  link.addEventListener('click', event => {
+    if (!link.getAttribute('href').trim()) event.preventDefault();
+  });
+});
+
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#site-nav');
 function closeMenu() {
