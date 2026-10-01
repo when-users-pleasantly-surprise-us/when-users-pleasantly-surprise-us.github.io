@@ -885,6 +885,27 @@ h1 {
     box-shadow: 0 2px 5px rgba(33, 63, 107, .12)
 }
 
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.proposal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.proposal-notice {
+  font: inherit;
+  color: inherit;
+}
+
+/* 버튼이 활성화되면 안내 문구 숨기기 */
+.proposal-actions button:not(:disabled) + .proposal-notice {
+  display: none;
+}
+
 .venue-grid {
     display: grid;
     grid-template-columns: .85fr 1.15fr;
